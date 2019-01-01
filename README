@@ -4,3 +4,4 @@ The acpi_connector_power_gui.sh file has to be started at startup in a session. 
 events and call handler_power_gui.sh which in turn will open rofi with the options.
 
 acpid has to installed and enabled and rofi has to be installed for the dialog
+
