@@ -1,0 +1,6 @@
+A little bash script which when the power button is pressed presents a litle gui to the user.
+
+The acpi_connector_power_gui.sh file has to be started at startup in a session. It will listen to acpid
+events and call handler_power_gui.sh which in turn will open rofi with the options.
+
+acpid has to installed and enabled and rofi has to be installed for the dialog
