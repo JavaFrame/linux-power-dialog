@@ -12,9 +12,7 @@ function showRofi {
     esac
 }
 
-function lock {
-    dm-tools switch-to-greeter
-}
+echo "params: $@"
 
 case "$1" in
     button/power)
@@ -26,16 +24,6 @@ case "$1" in
             *)
                 logger "handler_power_gui.sh: ACPI action undefined: $2"
                 ;;
-    button/lid)
-        case "$3" in
-            close)
-                logger 'LID closed'
-                dm-tool switch-to-greeter
-                ;;
-            open)
-                logger 'LID opened'
-                ;;
-
         esac
         ;;
 esac
