@@ -10,7 +10,10 @@ function showRofi {
         "Shutdown") systemctl poweroff;;
         "Reboot") systemctl reboot;;
     esac
+}
 
+function lock {
+    dm-tools switch-to-greeter
 }
 
 case "$1" in
@@ -23,6 +26,16 @@ case "$1" in
             *)
                 logger "handler_power_gui.sh: ACPI action undefined: $2"
                 ;;
+    button/lid)
+        case "$3" in
+            close)
+                logger 'LID closed'
+                dm-tool switch-to-greeter
+                ;;
+            open)
+                logger 'LID opened'
+                ;;
+
         esac
         ;;
 esac
